@@ -2,7 +2,7 @@
 
 A self-hosted, collaborative grocery list app with Claude AI integration. Manage your grocery list in real time across multiple devices, get recipe suggestions from Claude, and parse handwritten lists via photo upload.
 
-![Synthwave UI with neon pink and cyan palette](.github/Screenshot.jpeg)
+![Synthwave UI with neon pink and cyan palette](.github/screenshot.jpeg)
 
 ## Features
 
