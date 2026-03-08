@@ -61,7 +61,9 @@ DB_ROOT_PASSWORD=your_secure_root_password_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
 
-> Get your Anthropic API key at [console.anthropic.com](https://console.anthropic.com/). Claude Haiku is used for auto-categorization and Claude Sonnet for chat and photo parsing.
+- `DB_PASSWORD` — the password for the app's database user
+- `DB_ROOT_PASSWORD` — the MariaDB root password, required by the Docker image to initialize the database. The app itself never uses this value; choose any strong password.
+- `ANTHROPIC_API_KEY` — get yours at [console.anthropic.com](https://console.anthropic.com/). Claude Haiku is used for auto-categorization; Claude Sonnet for chat and photo parsing.
 
 ### 3. Start the app
 
@@ -76,7 +78,34 @@ On first run, Docker will:
 - Build the Vue frontend
 - Start the Node.js backend
 
-Subsequent starts (no code changes) use `docker compose up` without `--build`.
+> **Note:** First startup takes 30–60 seconds. MariaDB needs time to initialize before the app can connect. This is normal — wait for the log line `Grocery App server running on port 3000` before opening the browser.
+
+To run in the background (detached mode):
+
+```bash
+docker compose up --build -d
+```
+
+Subsequent starts (no code changes):
+
+```bash
+docker compose up -d
+```
+
+## Logs
+
+To view live logs:
+
+```bash
+docker compose logs -f
+```
+
+To view logs for a specific service:
+
+```bash
+docker compose logs -f app
+docker compose logs -f db
+```
 
 ## Stopping the app
 
