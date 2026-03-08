@@ -36,8 +36,8 @@ A self-hosted, collaborative grocery list app with Claude AI integration. Manage
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/grocery-app.git
-cd grocery-app
+git clone https://github.com/dirkstrange/Strange-Grocery-App.git
+cd Strange-Grocery-App
 ```
 
 ### 2. Configure environment variables
@@ -56,6 +56,7 @@ DB_PORT=3306
 DB_NAME=grocery_app
 DB_USER=grocery_user
 DB_PASSWORD=your_secure_password_here
+DB_ROOT_PASSWORD=your_secure_root_password_here
 
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
